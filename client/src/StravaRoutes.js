@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect  } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const StravaRoutes = () => {
 
   const [ backendData, setBackendData ]= useState([{}]);
   const [ route, setRoute ]= useState({});
+  const navigate = useNavigate();
 
   useEffect(()=>{
     fetch('/api')
@@ -12,10 +14,10 @@ const StravaRoutes = () => {
   },[])
 
   const selectedRoute = (evt) => {
-    const route = backendData[evt.target.value]
-    setRoute(route)
+    const route = backendData[evt.target.value];
+    setRoute(route.id);
+    navigate(`/api/${route.id}`);
   }
-
 
 
   return (
