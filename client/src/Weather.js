@@ -17,16 +17,15 @@ const Weather = () => {
     )
     .then(res=>res.json())
     .then((data)=>setWeather(data)) 
-    .then(data => console.log(data, 'here is data from fetch'))
     } 
     stravaId();
 },[])
 
-console.log(weather.segments, 'here is athlete');
+
 
   return (
     <div>
-      { weather.segments }
+      { weather }
     </div>
   )
 }

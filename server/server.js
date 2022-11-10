@@ -14,10 +14,14 @@ app.get("/api", async (req,res)=>{
 })
 
 app.get("/api/:id", async (req,res)=>{
-  const iDStravaApi = `https://www.strava.com/api/v3/routes/${req.params.id}?access_token=873dd510ec8fe0219b3863776113f4e9d7e38d97`
+  console.log(req.params.id)
+  const newId = req.params.id
+  console.log(newId)
+  const iDStravaApi = `https://www.strava.com/api/v3/routes/${newId}?access_token=873dd510ec8fe0219b3863776113f4e9d7e38d97`
   let idStravaResponse = await fetch(iDStravaApi);
   idStravaResponse = await idStravaResponse.json();
-  console.log(idStravaResponse, 'here is ID response')
+  console.log(idStravaResponse.segments[0].state, 'here city')
+  ç
   res.status(200).json(idStravaResponse);
 })
 

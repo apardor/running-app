@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const StravaRoutes = () => {
 
-  const [ backendData, setBackendData ]= useState([{}]);
+  const [ backendData, setBackendData ]= useState([]);
   const [ route, setRoute ]= useState({});
   const navigate = useNavigate();
 
@@ -15,20 +15,21 @@ const StravaRoutes = () => {
 
   const selectedRoute = (evt) => {
     const route = backendData[evt.target.value];
-    setRoute(route.id);
-    navigate(`/api/${route.id}`);
+    setRoute(route);
+    navigate(`/api/${route.id_str}`);
   }
 
 
   return (
     <div>
-      {(typeof backendData === "undefined") ? (
+      {(backendData === ['']) ? (
             <p>Loading...</p>
           ) : ( 
             <form>
             <select onChange={selectedRoute}>
-              { backendData.map((el, i) =>
-                <option value={i} key={i}> {el.name} </option> )}
+              {backendData.map((el, i) =>
+                <option value={i} key={i}> {el.name} </option>)
+                }
             </select>
           </form> )
       }
