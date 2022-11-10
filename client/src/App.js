@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './App.css';
+import StravaRoutes from './StravaRoutes';
 
 
 
 const App = () => {
 
-  const [ backendData, setBackendData ]= useState([{}]);
-
-  useEffect(()=>{
-    fetch('/api')
-      .then(res=>res.json())
-      .then((data)=>setBackendData(data)) 
-  },[])
 
   return (
     <div>
-     {(typeof backendData.users === "undefined") ? (
-      <p>Loading...</p>
-     ) : (
-      backendData.users.map((user,i) => (
-        <p key={i}> {user} </p>
-      )
-     ))}
+      <StravaRoutes />
     </div>
   )
 }
-
 export default App
 
 
