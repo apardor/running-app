@@ -6,22 +6,19 @@ const fetch = (...args) =>
 	import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 
-app.get("/api", async (req,res)=>{
-  const stravaApi = 'https://www.strava.com/api/v3/athlete/routes?access_token=873dd510ec8fe0219b3863776113f4e9d7e38d97'
-  let stravaResponse = await fetch(stravaApi);
+app.get("/api/", async (req,res)=>{
+  const nasaAPI = 'https://api.nasa.gov/planetary/apod?api_key=RttEEADO8LyAIygdS9CL9oyeLFzf9hvLFXEyUcu4'
+  let stravaResponse = await fetch(nasaAPI);
   stravaResponse = await stravaResponse.json();
   res.status(200).json(stravaResponse);
 })
 
+
 app.get("/api/:id", async (req,res)=>{
-  console.log(req.params.id)
   const newId = req.params.id
-  console.log(newId)
-  const iDStravaApi = `https://www.strava.com/api/v3/routes/${newId}?access_token=873dd510ec8fe0219b3863776113f4e9d7e38d97`
+  const iDStravaApi = `https://api.nasa.gov/planetary/apod?date=${newId}&api_key=RttEEADO8LyAIygdS9CL9oyeLFzf9hvLFXEyUcu4`
   let idStravaResponse = await fetch(iDStravaApi);
   idStravaResponse = await idStravaResponse.json();
-  console.log(idStravaResponse.segments[0].state, 'here city')
-  ç
   res.status(200).json(idStravaResponse);
 })
 

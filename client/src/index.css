@@ -1,13 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Mukta', sans-serif;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.main__gallery{
+  display: flex;
+  flex-direction: row-reverse;
+  color: white;
+  background-color: black;
+}
+
+h1{
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+h2{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.article__planet{
+  font-size: 1.2rem;
+}
+
+.main__right{
+  width: 50vw;
+}
+
+.section__right{
+  backdrop-filter: blur(50px) brightness(50%);
+  padding: 2rem 2.5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__left{
+  width: 50vw;
+}
+
+.img__planet{
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+.button__btn{
+  cursor: pointer;
 }

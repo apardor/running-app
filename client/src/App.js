@@ -1,8 +1,8 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import StravaRoutes from './StravaRoutes';
-import Weather from './Weather';
+import Today from './Today';
+import Past from './Past';
 
 
 
@@ -11,8 +11,8 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path={`/api`} element={<StravaRoutes/>}/>
-        <Route path={`/api/:id`} element={<Weather/>}/>
+        <Route path={`/api`} element={<Today/>}/>
+        <Route path={`/api/:id`} element={<Past/>}/>
       </Routes>
     </div>
   )
