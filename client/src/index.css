@@ -63,3 +63,20 @@ h2{
 .button__btn{
   cursor: pointer;
 }
+
+
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(201, 231, 231);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  color: black;
+  font-size: 3rem;
+  text-align: center;
+  background-image: url('../img/saturn.png');
+
+}

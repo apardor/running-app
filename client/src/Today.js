@@ -9,6 +9,7 @@ const Today = () => {
   const [output, setOutput] = useState();
   const navigate = useNavigate();
 
+  console.log(backendData, 'here is backend data');
 
   useEffect(()=>{
     fetch('/api')
@@ -23,9 +24,12 @@ const handleClick = (e) => {
   }
  
 const planet = backendData;
-console.log(planet.date, 'here is planet');
 
   return (
+    (backendData.length === 0) ? (
+<div className="loading">Loading...</div>
+
+    ) : (
 <main className='main__gallery'>
   <div className='main__right' style={{ 
     backgroundImage: `url(${planet.url})`,
@@ -42,7 +46,7 @@ console.log(planet.date, 'here is planet');
   <img className='img__planet' src={ planet.url } /> 
   </div>
 </main>  
-
+    )
   )
 }
 
