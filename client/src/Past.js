@@ -31,6 +31,8 @@ const handleClick = (e) => {
 
 const planet = backendData;
 
+console.log(planet);
+
 return (
   (backendData.length === 0) ? (
 <div className="loading">Loading...</div>
@@ -47,11 +49,12 @@ return (
   </nav>
     
 <h2 className='title__planet'> {planet.title} </h2>
+<h3>{planet.date} </h3>
 <article className='article__planet'> {planet.explanation} </article>
 </div>
 </div>
 <div className='main__left'>
-<img className='img__planet' src={ planet.url } /> 
+<img className='img__planet' src={ planet.url } />
 </div>
 </main>  
   )

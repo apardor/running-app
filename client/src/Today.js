@@ -36,10 +36,11 @@ const planet = backendData;
     backgroundRepeat: `no-repeat`,
   }}>
     
-    <div className='section__right'>
     <h1>Nasa picture of the day</h1>
+    <div className='section__right'>
     <Input handleClick={handleClick} searchvalue={setOutput}/>    
   <h2 className='title__planet'> {planet.title} </h2>
+  <h3>{planet.date} </h3>
   <article className='article__planet'> {planet.explanation} </article>
   
   </div>
