@@ -41,10 +41,13 @@ return (
   backgroundRepeat: `no-repeat`,
 }}>
   <div className='section__right'>
-<h1>Nasa gallery</h1>
+  <nav className='nav'>
+  <h1>Nasa picture of the day</h1>
+  <Input handleClick={handleClick} searchvalue={setOutput}/>
+  </nav>
+    
 <h2 className='title__planet'> {planet.title} </h2>
 <article className='article__planet'> {planet.explanation} </article>
-<Input handleClick={handleClick} searchvalue={setOutput}/>
 </div>
 </div>
 <div className='main__left'>

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Poppins:wght@600&display=swap');
+
 
 *{
   box-sizing: border-box;
@@ -8,11 +9,9 @@
 
 body {
   margin: 0;
-  font-family: 'Mukta', sans-serif;
   height: 100vh;
+  font-family: 'Mukta', sans-serif;
 }
-
-
 
 .main__gallery{
   display: flex;
@@ -21,27 +20,47 @@ body {
   background-color: black;
 }
 
+
+
 h1{
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   font-size: 2.5rem;
+  /* padding-top: 1.5rem; */
 }
 
 h2{
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+h3{
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .article__planet{
   font-size: 1.2rem;
 }
 
+.title__planet{
+  padding-top: 3rem;
+  padding-bottom: 1.2rem;
+}
+
 .main__right{
   width: 50vw;
 }
 
+.nav{
+  backdrop-filter: blur(50px) brightness(50%);
+}
+
 .section__right{
   backdrop-filter: blur(50px) brightness(50%);
-  padding: 2rem 2.5rem;
+  padding: 0rem 2.5rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,7 +83,6 @@ h2{
   cursor: pointer;
 }
 
-
 .loading{
   display: flex;
   align-items: center;
@@ -78,5 +96,32 @@ h2{
   font-size: 3rem;
   text-align: center;
   background-image: url('../img/saturn.png');
+}
 
+.form__search{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.input__date{
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 15px 0 0 15px;
+}
+.button__btn{
+  padding: 0.6rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  color: white;
+  transition: background-color 0.5s ease;
+  background-color: #AF02D4;
+}
+
+.button__btn:hover{
+  transition: background-color 0.5s ease;
+  background-color: #870EEB;
 }
